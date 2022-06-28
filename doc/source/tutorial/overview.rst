@@ -6,11 +6,11 @@
 编写工作流定义
 ----------------------
 
-工作流定义表述如何运行任务并与其进行交互。
+工作流定义描述如何运行任务并与其进行交互。
 *Task* 可以组成 *NodeContainer*，*NodeContainer* 可以属于另外的 *NodeContainer* 或属于 *Flow*。
-所有的实体 (Task, NodeContainer, Flow) 都叫做 *Node*，构成一个层次数。
+所有的实体 (Task, NodeContainer, Flow) 都叫做 *Node*，构成一个层次树。
 
-Takler 支持使用 Python 编写工作流定义。
+Takler 使用 Python 编写工作流定义。
 
 编写任务脚本
 ------------------

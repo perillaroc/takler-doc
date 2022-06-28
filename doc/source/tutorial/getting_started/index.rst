@@ -3,10 +3,6 @@
 
 开始教程前需要配置 Takler 使用环境。
 
-.. note::
-
-    本教程以中国气象局超级计算机 CMA-PI 为例说明如何在 HPC 环境中使用 Takler，相关代码也同样适用于其他 Linux 服务器。
-
 安装 Takler 环境
 -----------------
 
@@ -48,13 +44,15 @@
 
 .. code-block:: bash
 
-    mkdir -p /g11/wangdp/project/course/takler/tutorial
-    cd /g11/wangdp/project/course/takler/tutorial
+    export TAKLER_HOME=/g11/wangdp/project/course/takler/tutorial
+    mkdir -p ${TAKLER_HOME}
+    cd ${TAKLER_HOME}
 
 
 .. toctree::
    :hidden:
    :maxdepth: 2
 
-   define-a-new-suite
+   define-a-new-flow
    understanding-includes
+   define-the-first-task

@@ -60,6 +60,7 @@ html_theme = 'sphinx_book_theme'
 html_theme_options = {
     "repository_url": "https://github.com/perillaroc/takler-doc",
     "use_repository_button": True,
+    "home_page_in_toc": False,
 }
 html_title = "Takler文档"
 

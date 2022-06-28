@@ -1,4 +1,3 @@
-==================================
 Takler 教程
 ==================================
 
@@ -8,6 +7,9 @@ Takler 教程
 
 
 .. toctree::
+   :hidden:
    :maxdepth: 2
 
    overview
+   getting_started/index
+

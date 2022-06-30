@@ -109,4 +109,4 @@ tail.takler 放在 takler 脚本文件的结尾，通知服务该任务已经完
 练习
 -----
 
-1. 在 ``${TAKLER_HOME}`` 目录中创建 `head.takler` 和 `tail.takler` 头文件
+1. 在 ``${TAKLER_HOME}/test`` 目录中创建 `head.takler` 和 `tail.takler` 头文件

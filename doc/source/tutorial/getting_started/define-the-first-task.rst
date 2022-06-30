@@ -24,9 +24,9 @@
 
 .. code-block:: bash
 
-    {% include "../head.takler" %}
+    {% include "head.takler" %}
     echo "I am part of a flow that lives in {{ TAKLER_HOME }}"
-    {% include "../tail.takler" %}
+    {% include "tail.takler" %}
 
 
 作业生成
@@ -42,12 +42,18 @@
 
 在当前示例中：
 
-- ``{% include "../head.takler" %}`` 会被替换为 **head.takler** 文件的内容。
+- ``{% include "head.takler" %}`` 会被替换为 **head.takler** 文件的内容。
 
-  注意头文件路径相对于 **task1.takler**，本例中的 **head.takler** 位于 **task1.takler** 所在目录的上一级目录中。
+  注意头文件路径相对于 **task1.takler** 所在目录，本例中的 **head.takler** 与 **task1.takler** 在同一个目录中。
+
+  .. warning::
+
+    Jinja2 默认仅支持加载模板目录内或子目录内的模板文件。
+    Takler 在解析任务脚本时默认将该脚本所在目录放到模板搜索列表中。
+    所以如果没有额外设置头文件路径，Takler 无法加载脚本所在目录之外的头文件，比如 ``../head.takler``。
 
 - ``{{ TAKLER_HOME }}`` 被 ``TAKLER_HOME`` 变量的值替换
-- ``{% include "../tail.takler" %}`` 会被替换为 **tail.takler** 文件的内容
+- ``{% include "tail.takler" %}`` 会被替换为 **tail.takler** 文件的内容
 
 练习
 ------

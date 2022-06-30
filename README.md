@@ -1,6 +1,10 @@
 # Takler Document
 
+[![Documentation Status](https://readthedocs.org/projects/takler/badge/?version=latest)](https://takler.readthedocs.io/en/latest/?badge=latest)
+
 Documentation for the Takler workflow tool.
+
+中文文档：[https://takler.readthedocs.io/](https://takler.readthedocs.io/)
 
 # LICENSE
 

@@ -15,5 +15,5 @@ Takler 教程
    :maxdepth: 2
 
    overview
-   getting_started/index
+   getting-started/index
 

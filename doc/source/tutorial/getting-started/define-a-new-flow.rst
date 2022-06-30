@@ -16,7 +16,7 @@
     import sys
     from pathlib import Path
 
-    from takler.core import Flow
+    from takler.core import Flow, Bunch
     from takler.tasks.shell import ShellScriptTask
     from takler.visitor import pre_order_travel, PrintVisitor
 
@@ -34,6 +34,8 @@
 
     if __name__ == "__main__":
         flow1 = create_flow()
+        bunch = Bunch()
+        bunch.add_flow(flow)
         pre_order_travel(flow1, PrintVisitor(sys.stdout))
 
 
@@ -44,6 +46,7 @@
 - 1-2：导入 Python 自带包
 - 4-6：导入 takler 包中对象
     - ``Flow``：工作流类
+    - ``Bunch``：工作流集合类，可以包含多个工作流 (``Flow``) 对象
     - ``ShellScriptTask``：Shell 脚本任务类
     - ``pre_order_travel()`` 函数：前序遍历工作流
     - ``PrintVisitor`` 类：打印节点信息
@@ -60,7 +63,9 @@
 - 17：``create_flow()`` 函数返回工作流 ``flow`` 对象
 - 20：定义直接运行脚本会执行的代码
 - 21：创建工作流
-- 22：``pre_order_travel`` 与 ``PrintVisitor`` 结合会打印工作流的树形结构
+- 22：创建工作流集合 ``bunch`` 对象
+- 23：将工作流 ``flow`` 添加到 ``bunch`` 中
+- 24：``pre_order_travel`` 与 ``PrintVisitor`` 结合会打印工作流的树形结构
 
 运行上述脚本
 

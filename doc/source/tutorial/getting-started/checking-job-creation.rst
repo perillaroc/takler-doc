@@ -20,7 +20,7 @@ task1.takler 脚本需要经过预处理生成作业文件 (job file)。
 
 检查作业生成时需要注意以下几点：
 
-1. 作业检查 **独立** 于 Takler 服务，因此作业文件中的 ``TAKLER_HOST`` 和 ``TAKLER_PORT`` 默认为空。
+1. 作业检查 **独立** 于 Takler 服务，因此作业文件中的 ``TAKLER_HOST`` 和 ``TAKLER_PORT`` 被替换为默认值 (``localhost`` 和 ``33083``)。
 2. 作业文件扩展名是 **.job**。
 3. 默认情况下，作业文件在 ``TAKLER_HOME`` 目录下生成。
 
@@ -33,7 +33,7 @@ task1.takler 脚本需要经过预处理生成作业文件 (job file)。
     import sys
     from pathlib import Path
 
-    from takler.core import Flow
+    from takler.core import Bunch, Flow
     from takler.tasks.shell import ShellScriptTask, check_job_creation
     from takler.visitor import pre_order_travel, PrintVisitor
 
@@ -51,6 +51,8 @@ task1.takler 脚本需要经过预处理生成作业文件 (job file)。
 
     if __name__ == "__main__":
         flow = create_flow()
+        bunch = Bunch()
+        bunch.add_flow(flow)
         pre_order_travel(flow, PrintVisitor(sys.stdout))
         check_job_creation(flow)
 

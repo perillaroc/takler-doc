@@ -57,3 +57,4 @@
    understanding-includes
    define-the-first-task
    checking-job-creation
+   checking-the-job
